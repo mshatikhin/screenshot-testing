@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-4x3.css">
+</head>
+<body class="shower list black">
+
+<style>
+    body, .shower, .slide h2 {
+        color: #fff;
+    }
+
+    body, .shower .black, .shower.full {
+        background-color: #222;
+    }
+
+    .slide a {
+        color: #42affa;
+    }
+</style>
+
+<header class="caption">
+    <h1>Пиксель Шрёдингера</h1>
+    <p>Авторы: Титаренко Дмитрий и Михаил Шатихин (СКБ Контур 2017)</p>
+</header>
+
+<style>
+    .active.fromFadeImage {
+        animation-name: fromFade;
+        animation-duration: 0.6s;
+        animation-timing-function: linear;
+    }
+
+    .slide ul > li:lang(ru)::before {
+        content: '☗';
+        transform: rotate(90deg);
+    }
+
+    @keyframes fromFade {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+
+    }
+</style>
+
+<section class="slide black">
+    <h2 class="cover" style="
+    font-size: 300%;
+    width: 50%;
+    font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    /* padding: 20px; */
+">
+        <div style="
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid cyan;
+    border-bottom: none;
+    border-right: none;
+    margin: -40px;
+"></div>
+
+        <div style="
+    text-shadow: -10px -10px 8px cyan;
+">Пиксель
+        </div>
+        <div style="
+    text-align: right;
+    text-shadow: 10px 10px 8px magenta;
+">Шрёдингера
+        </div>
+        <div style="
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: 0;
+    right: 0;
+    border: 1px solid magenta;
+    border-top: none;
+    border-left: none;
+    margin: -40px;
+"></div>
+    </h2>
+</section>
+
+<section class="slide black">
+    <h2>Метод пристального взгляда</h2>
+    <div>
+        <img src="pictures/focus_1.png" class="place bottom" height="560" style="padding-bottom:40px"/>
+        <img src="pictures/focus.png" class="place bottom next fromFadeImage" height="560" style="padding-bottom:40px"/>
+        <img src="pictures/vr.png" class="place right bottom" style="zoom:0.8"/>
+    </div>
+</section>
+
+<style>
+    .active.fromRightImage {
+        animation-name: fromRightAnimation;
+        animation-duration: 0.5s;
+        animation-timing-function: linear;
+    }
+
+    @keyframes fromRightAnimation {
+        from {
+            transform: translateX(600px)
+        }
+
+        to {
+            transform: translateX(0)
+        }
+
+    }
+</style>
+
+<section class="slide black">
+    <h2>Wish list</h2>
+    <ul>
+        <li>Полуавтоматический инструмент предрелизной проверки</li>
+        <li>Возможность проверить перед пушем, что ничего не сломалось</li>
+        <li style="text-decoration:line-through;">TeamCity, агенты, сломанные тесты…</li>
+        <li>…
+        <li>Релиз близко!</li>
+    </ul>
+    <img src="./pictures/relese_is_comming.png" class="fromRightImage place right bottom next" height="400"
+         style="padding:0 40px 40px 0"/>
+</section>
+
+<section class="slide black">
+    <h2>WebDiff</h2>
+    <img src="pictures/webdiff.png" class="place left" width="100%" style="margin-top:20px;padding:40px"/>
+</section>
+
+<section class="slide black">
+    <h2>WebDiff</h2>
+    <!--img class="cover" src="pictures/dark_eyes.png" alt="Cover"-->
+    <img src="pictures/webdiff_focus.png" class="place bottom" width="100%" style="bottom:80px"/>
+</section>
+
+<section class="slide black">
+    <h2>WebDiff</h2>
+    <img src="pictures/webdiff_example.png" class="place left bottom" height="540" style="left:40px;bottom: 40px"/>
+</section>
+
+<section class="slide black">
+    <h2>De facto</h2>
+    <ul>
+        <li>Поддержка Firefox, Chrome</li>
+        <li>Скриншоты страницы целиком (вертикальный скроллинг)</li>
+        <li>Изменение размеров окна и эмуляция мобильных устройств</li>
+        <li>Ожидание загрузки динамического контента</li>
+        <li>Cookies, подключение произвольных CSS / JS <span style="color:#777">[WebExtension]</span></li>
+        <li>Просмотр/модификация HTTP-заголовков <span style="color:#777">[WebExtension]</span></li>
+        <li>Формирование HTML-отчета для артефактов TeamCity</li>
+    </ul>
+</section>
+
+<style>
+    .slide #diff_table td {
+        padding: 0;
+        margin: 0;
+    }
+
+    #diff_table td {
+        vertical-align: top;
+    }
+</style>
+
+<section class="slide black">
+    <h2>Pros et Cons</h2>
+    <table id="diff_table">
+        <tbody>
+        <tr>
+            <td><img src="pictures/webdiff_plus.png" width="300" class="next fromFadeImage"/></td>
+            <td><img src="pictures/webdiff_minus.png" width="300" class="next fromFadeImage"/></td>
+            <td><img src="pictures/webdiff_w.png" width="300" class="next fromFadeImage"/></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="slide black">
+    <h2>Live</h2>
+    <video src="./pictures/video.mp4" class="place left bottom" autoplay loop controls
+           style="width:100%;padding:0 40px 40px 40px"></video>
+</section>
+
+<section class="slide black">
+    <h2>Links</h2>
+    <ul>
+        <li>webdiff<br/>
+            <a target="_blank" href="//github.com/dscheg/webdiff">github.com/dscheg/webdiff</a>
+        </li>
+        <li style="margin-top:40px">dpxdt (Python, PhantomJS, ImageMagick)<br/>
+            <a target="_blank" href="//github.com/bslatkin/dpxdt">github.com/bslatkin/dpxdt</a>
+        </li>
+        <li style="margin-top:40px">ashot (Yandex screenshot lib, Java)<br/>
+            <a target="_blank" href="//github.com/yandex-qatools/ashot">github.com/yandex-qatools/ashot</a>
+        </li>
+    </ul>
+    <img src="pictures/head_zhdun.png" height="152" width="320" class="place right bottom"
+         style="margin:0 80px 40px 0;zoom:0.75"/>
+</section>
+
+<section class="slide black" id="cover">
+    <img class="cover" src="pictures/dark_eyes.png" alt="Cover">
+    <h2><span style="color: #ff0000">G</span>emini</h2>
+    <style>
+        #cover h2 {
+            position: absolute;
+            top: 50%;
+            color: #fff;
+            text-align: center;
+            font-size: 70px;
+            margin-left: -15px;
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</section>
+
+<section class="slide black">
+    <h2 style="color: white">Обо мне</h2>
+    <ul style="color: white">
+        <li>Фронтендер в Контур.Гособлако</li>
+        <li>Не люблю рутину</li>
+        <li>Пишу тесты</li>
+    </ul>
+    <img src="pictures/me.jpg" class="cover"/>
+</section>
+
+<section class="slide black">
+    <h2>
+        <img src="./pictures/white_logo.png" style="max-width: 70%"></h2>
+    <ul>
+        <li>SPA приложение</li>
+        <li>Много редакторов форм</li>
+        <li>Кастомизация под заказчика</li>
+        <li>Хостится у заказчика</li>
+        <li>Заказчик — Государство</li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <img class="cover place width top" src="pictures/gc_employee_create.png">
+</section>
+
+<section class="slide black">
+    <img class="cover place width top" src="pictures/gc_collapse_editors.png">
+</section>
+
+<section class="slide black">
+    <h2>Сегодня у нас</h2>
+    <ul>
+        <li>50+ реквизитов</li>
+        <li>5 типов редакторов реквизитов</li>
+        <li>10 типов редакторов полей</li>
+        <li>10 параметров отображения поля</li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <h2>Проблемы</h2>
+    <ul>
+        <li>Бэкенд генерирует формы</li>
+        <li>Изменяя один редактор можно поломать остальные</li>
+        <li>Соответствие прототипам после рефакторинга</li>
+        <li>После обновления <a href="https://github.com/skbkontur/retail-ui">retail-ui</a> быть спокойнее</li>
+    </ul>
+    <img class="next" src="pictures/eyes.gif" height="350"/>
+</section>
+
+<section class="slide black">
+    <h2 class="shout">Стильно. <br/> Модно. <br/> Молодежно.</h2>
+</section>
+
+<section class="slide black">
+    <h2>Используем песочницу Storybook</h2>
+    <ul>
+        <li>Позволяет разрабатывать компоненты в «вакууме»</li>
+        <li>Упрощает тестирование</li>
+        <li>Отладка компонентов становится проще</li>
+        <li class="next">Storybook <span style="color: red">❤</span> Gemini
+        </li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <h2>Тестируем верстку скриншотами</h2>
+    <ul>
+        <li>Делаем скриншоты компонентов в разных состояниях</li>
+        <li class="next">Сравниваем между собой автоматически</li>
+        <li class="next">Храним эталоны в репозитории</li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <h2>Gemini</h2>
+    <div class="next">
+        <div style="color: #00e200;">Плюсы</div>
+        <ul>
+            <li>Умеет делать скриншоты любой части страницы</li>
+            <li>Есть API для взаимодействовия с UI</li>
+            <li>Запуск тестов в разных браузерах</li>
+            <li>Эталоны в репозитории</li>
+        </ul>
+    </div>
+    <div class="next">
+        <div style="color: #ff4343;">Минусы</div>
+        <ul>
+            <li>Поддержка инфраструктуры (selenium)</li>
+            <li>Нужно писать тесты</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide black">
+    <h2>Бонусы</h2>
+    <ul>
+        <li>Возможность игнорировать лишнее</li>
+        <li>Подробный HTML отчёт</li>
+        <li>Есть GUI</li>
+        <li>Полезные плагины (teamcity, react, webpack)</li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <h2>Пример теста</h2>
+    <pre>
+        <code>gemini.suite('RequisiteHistoryEditor', suite => {</code>
+        <code>  suite.setUrl(url)</code>
+        <code>    .setCaptureElements(selectors)</code>
+        <code>    .capture('clicked', function (actions, find) {</code>
+        <code>      actions.click(find(rowSelector));</code>
+        <code>    });</code>
+        <code>});</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <style>
+        .grey {
+            color: #505050;
+        }
+
+        .blue {
+            color: #376da3;
+        }
+    </style>
+    <h2>Пример теста</h2>
+    <pre>
+        <code>gemini.suite(<mark>'RequisiteHistoryEditor'</mark>, suite => {</code>
+        <code class="grey">  suite.setUrl(url)</code>
+        <code class="grey">    .setCaptureElements(selectors)</code>
+        <code class="grey">    .capture('clicked', function (actions, find) {</code>
+        <code class="grey">      actions.click(find(rowSelector))</code>
+        <code class="grey">    });</code>
+        <code>});</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <h2>Пример теста</h2>
+    <pre>
+        <code class="grey">gemini.suite('RequisiteHistoryEditor', suite => {</code>
+        <code>  suite.setUrl(<mark>url</mark>)</code>
+        <code class="grey">    .setCaptureElements(selectors)</code>
+        <code class="grey">    .capture('clicked', function (actions, find) {</code>
+        <code class="grey">      actions.click(find(rowSelector);</code>
+        <code class="grey">    });</code>
+        <code class="grey">});</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <h2>Пример теста</h2>
+    <pre>
+        <code class="grey">gemini.suite('RequisiteHistoryEditor', suite => {</code>
+        <code class="grey">  suite.setUrl(url)</code>
+        <code>    .setCaptureElements(<mark>selectors</mark>)</code>
+        <code class="grey">    .capture('clicked', function (actions, find) {</code>
+        <code class="grey">      actions.click(find(rowSelector));</code>
+        <code class="grey">    });</code>
+        <code class="grey">});</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <h2>Пример теста</h2>
+    <pre>
+        <code class="grey">gemini.suite('RequisiteHistoryEditor', suite => {</code>
+        <code class="grey">  suite.setUrl(url)</code>
+        <code class="grey">    .setCaptureElements(selectors)</code>
+        <code>    .capture(<mark>'clicked'</mark>, function (actions, find) {</code>
+        <code>      actions.click(find(rowSelector));</code>
+        <code>    });</code>
+        <code class="grey">});</code>
+    </pre>
+</section>
+
+
+<section class="slide black">
+    <h2>Пример теста множеста страниц</h2>
+    <pre>
+        <code>const urls = <mark>[ "/", "/products", "/support" ];</mark></code>
+        <code class="grey">urls.forEach((url, i) =></code>
+        <code class="grey">  gemini.suite(`suite-${i}`, suite =></code>
+        <code class="grey">    suite.setUrl(url)</code>
+        <code class="grey">      .setCaptureElements("#root")</code>
+        <code class="grey">      .capture('plain')</code>
+        <code class="grey">    )</code>
+        <code class="grey">)</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <h2>Пример теста множеста страниц</h2>
+    <pre>
+        <code class="grey">const urls = [ "/", "/products", "/support" ];</code>
+        <code>urls.forEach((url, i) =></code>
+        <code class="grey">  gemini.suite(`suite-${i}`, suite =></code>
+        <code class="grey">    suite.setUrl(url)</code>
+        <code class="grey">      .setCaptureElements("#root")</code>
+        <code class="grey">      .capture('plain')</code>
+        <code class="grey">    )</code>
+        <code>)</code>
+    </pre>
+</section>
+
+<section class="slide black">
+    <h2>Пример теста множеста страниц</h2>
+    <pre>
+        <code class="grey">const urls = [ "/", "/products", "/support" ];</code>
+        <code class="grey">urls.forEach((url, i) =></code>
+        <code>  gemini.suite(`suite-${i}`, suite =></code>
+        <code>    suite.setUrl(url)</code>
+        <code>      .setCaptureElements("#root")</code>
+        <code>      .capture('plain')</code>
+        <code>    )</code>
+        <code class="grey">)</code>
+    </pre>
+</section>
+
+
+<section class="slide black">
+    <h2 class="shout">Из жизни</h2>
+</section>
+
+<section class="slide black">
+    <img src="pictures/tree_ex_1.jpg" class="cover"/>
+</section>
+
+<section class="slide black">
+    <h2 class="shout">Что-то поменялось</h2>
+</section>
+
+<section class="slide black">
+    <img src="pictures/tree_ex_2.jpg" class="cover"/>
+</section>
+
+<section class="slide black">
+    <img src="pictures/tree_ex_3.jpg" class="cover"/>
+</section>
+
+<section class="slide black">
+    <img src="pictures/gos_example_1.jpg" class="cover width"/>
+</section>
+
+<section class="slide black">
+    <img src="pictures/gos_example_3.jpg" class="cover width"/>
+</section>
+
+<section class="slide black">
+    <img src="pictures/gos_example_3_1.jpg" class="cover width"/>
+</section>
+
+<section class="slide black">
+    <h2>Профит использования css/style тестирования</h2>
+    <ul>
+        <li>Меньше боли при рефакторинге</li>
+        <li>Оперативно видим что сломалось</li>
+        <li>Больше времени на разработку*</li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <h2>Скриншотное тестирование в Контуре</h2>
+    <ul>
+        <li>Скриншотят 6 команд</li>
+        <li>Gemini используют 2 команды</li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <h2>Call to action</h2>
+    <ul>
+        <li class="next">Используйте песочницу компонентов</li>
+        <li class="next">Попробуйте написать скриншотный тест</li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <h2>Ссылки</h2>
+    <ul>
+        <li><a target="_blank" href="https://github.com/gemini-testing/gemini">github.com/gemini-testing/gemini</a></li>
+        <li><a target="_blank"
+               href="https://github.com/mshatikhin/gemini-example">github.com/mshatikhin/gemini-example</a></li>
+        <li><a target="_blank" href="https://github.com/mshatikhin/gemini-react-starter">github.com/mshatikhin/gemini-react-starter</a>
+        </li>
+        <li><a target="_blank" href="https://getstorybook.io/docs/react-storybook/testing/css-style-testing">getstorybook.io/docs/react-storybook</a>
+        </li>
+        <li><a target="_blank" href="https://gist.github.com/cvrebert/adf91e429906a4d746cd">Другие инструменты CSS
+            Regression
+            Testing</a></li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <h2 style="text-align: center">Вопросы?</h2>
+    <img src="pictures/giphy.gif" class="place" width="700"/>
+</section>
+
+<section class="slide black">
+    <h2>Как настроить git lfs</h2>
+    <ul>
+        <li>>$ git lfs install</li>
+        <li>>$ git lfs track "gemini/screens/**/*"</li>
+    </ul>
+</section>
+
+<section class="slide black">
+    <img src="pictures/git_screenshot.png" class="cover"/>
+</section>
+
+<!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+<!--<div class="progress"></div>-->
+<script src="shower/shower.min.js"></script>
+<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
